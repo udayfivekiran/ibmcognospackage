@@ -12,8 +12,8 @@ Const HKEY_CURRENT_USER =  &H80000001
 
   strKeyPath = "Software\Microsoft\Office\15.0\Excel\Options"
 
-  addin_val1="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
-addin_val2= chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
+  addin_val1="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics\PAforExcel.xll" & chr(34)
+addin_val2= chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics\PAforExcel.xll" & chr(34)
 
 
   objReg.EnumValues HKEY_CURRENT_USER, strKeyPath, arrValueNames, arrValueTypes
