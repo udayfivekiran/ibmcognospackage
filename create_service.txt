@@ -1,0 +1,26 @@
+set main=%~dp0
+
+"%main%nssm.exe" install MAGateway "%main%gateway\cmd\service\service.exe"
+nssm start MAGateway
+
+"%main%nssm.exe" install MAAD "%main%ad\cmd\cmd.exe"
+nssm start MAAD
+
+"%main%nssm.exe" install MADB "%main%database\cmd\cmd.exe"
+nssm start MADB
+
+"%main%nssm.exe" install MAEXCEL "%main%excel\cmd\cmd.exe"
+nssm start MAEXCEL
+
+"%main%nssm.exe" install MAPDF "%main%pdf\cmd\cmd.exe"
+nssm start MAPDF
+
+"%main%nssm.exe" install MAFAF "%main%faf\cmd\cmd.exe"
+nssm start MAFAF
+
+"%main%nssm.exe" install MARWS "%main%rws\cmd\cmd.exe"
+nssm start MARWS
+"%main%nssm.exe" install MASDP "%main%sdp\cmd\cmd.exe"
+nssm start MASDP
+"%main%nssm.exe" install MARA "%main%recordingagent\cmd\cmd.exe"
+nssm start MARA
