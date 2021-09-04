@@ -9,14 +9,14 @@ Const HKEY_CURRENT_USER =  &H80000001
   Set objReg=GetObject("winmgmts:{impersonationLevel=impersonate}!\\" &_ 
   strComputer & "\root\default:StdRegProv")
 
-strKeyPath = "Software\Microsoft\Office\16.0\Excel\Options"
+strKeyPath = "Software\Microsoft\Office\15.0\Excel\Options"
 
-  addin_val="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles%") & "\IBM_Planning_Analytics_Integration\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
+  addin_val="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics_Integration\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
 
 
 
   objReg.EnumValues HKEY_CURRENT_USER, strKeyPath, arrValueNames, arrValueTypes
-strvalue1="HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Excel\Options"
+strvalue1="HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Excel\Options"
   
   For intLoop = 0 To UBound(arrValueNames) 
 
@@ -39,7 +39,7 @@ End If
   Next
 
 
-  strKeyPath = "Software\Microsoft\Office\16.0\Excel\Options"
+  strKeyPath = "Software\Microsoft\Office\15.0\Excel\Options"
 
 
   loop_count=0
@@ -66,14 +66,14 @@ End If
  
  If loop_count=0 Then
  
- reg_var="HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Excel\Options\OPEN"
- reg_val="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles%") & "\IBM_Planning_Analytics_Integration\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
+ reg_var="HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Excel\Options\OPEN"
+ reg_val="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics_Integration\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
 
  objShell.RegWrite reg_var,reg_val
  Else 
  
- reg_var="HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Excel\Options\OPEN"&crt_counter+1
- reg_val="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles%") & "\IBM_Planning_Analytics_Integration\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
+ reg_var="HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Excel\Options\OPEN"&crt_counter+1
+ reg_val="/R " & chr(34) & objShell.expandenvironmentstrings("%programfiles(x86)%") & "\IBM_Planning_Analytics_Integration\IBM_PAfE_x64_2.0.65.11.xll" & chr(34)
  objShell.RegWrite reg_var,reg_val
  
  End if
